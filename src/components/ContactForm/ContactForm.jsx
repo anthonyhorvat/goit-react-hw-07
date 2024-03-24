@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { FormInput, InputName, NeonButton } from "./ContactForm.styled";
 import { Notify } from "notiflix";
-import { nanoid } from "nanoid";
-import { addContact } from "../../redux/contactsSlice";
+
+import { addContact } from "../../redux/contactsOps";
 import { getContacts } from "../../redux/selectors";
 
 const ContactForm = () => {
@@ -15,7 +15,6 @@ const ContactForm = () => {
     const contact = {
       name: e.currentTarget.elements.name.value,
       number: e.currentTarget.elements.number.value,
-      id: nanoid(),
     };
 
     const currentName = contacts.find(
